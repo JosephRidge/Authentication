@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg bg-success">
+    <div class="container ">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">cart</a>
+                </li>
+                {% if request.user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="#">promotions/ offers</a>
+                </li>
+                {% endif %}
+            </ul>
+            <ul class="navbar-nav">
+                {% if request.user.is_authenticated %}
+                <p class="lead fs-6">Welcome {{request.user}}</p>
+                <li class="nav-item">
+                    <a class="nav-link bg-success text-white border rounded-5 px-3 py-2 " href="{% url 'logout' %}">logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link bg-white rounded-5 px-3 py-2 " href="{% url 'login' %}">login</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

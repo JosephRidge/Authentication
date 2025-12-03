@@ -1,0 +1,22 @@
+{% extends 'main.html'%}
+
+
+{% block content %}
+<div>
+    <form action="" method="POST">
+
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <label for="username" class="form-label">Username:</label>
+            <input type="text" class="form-control" id="username" name="username">
+         </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password">
+        </div> 
+        <button type="submit" class="btn btn-success">Submit</button>
+        <a href="{% url 'register' %}" class="mx-2 text-success text-decoration-none">No account?</a>
+    </form>
+</div>
+{% endblock %}

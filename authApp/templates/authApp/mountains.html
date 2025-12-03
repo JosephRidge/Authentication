@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+
+{% load static %}
+{% block content %}
+<h1 class="display-5">Top 10 Mountains in the World </h1>
+<!-- <a href="{% url 'createMountain' %}" class="text-decoration-none bg-dark text-light py-2 my-2 px-3 rounded">add mountain</a> -->
+<hr>
+<div class="product-section">
+    <div class="container">
+        <div class="row">
+    {% for mountain in mountains %}
+    <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+        <a class="product-item" href="cart.html">
+            <img src="{{mountain.image}}" class="img-fluid product-thumbnail">
+            <h3 class="product-title">{{mountain.name}}</h3>
+            <strong class="product-price">$43.00</strong>
+
+            <span class="icon-cross">
+                <img src="{% static 'images/cross.svg'%}" class="img-fluid">
+            </span>
+        </a>
+    </div>  
+    {% endfor %}
+</div>
+</div>
+</div>
+
+
+{% endblock%}

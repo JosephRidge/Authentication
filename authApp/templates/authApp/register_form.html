@@ -1,0 +1,14 @@
+{% extends 'main.html'%}
+
+
+{% block content %}
+<div>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form.as_p}} 
+        <button type="submit" class="btn btn-success mt-3">Register</button>
+        <a href="{% url 'login' %}" class="mx-2 text-success text-decoration-none">Back to Login?</a>
+
+    </form>
+</div>
+{% endblock %}

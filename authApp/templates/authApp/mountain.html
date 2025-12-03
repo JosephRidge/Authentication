@@ -1,0 +1,14 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h1 class="display-5"> {{mountain.name}} </h1>
+<hr>
+<div> 
+    <img src="{{mountain.image}}" alt="image of mountain" class="my-2 rounded "><br>
+   <span class= "fs-6 fw-light text-secondary">located at</span> <span class="badge bg-info text-dark px-3 py-2"> {{mountain.location}}</span>
+    <p class="lead my-2">{{mountain.description }}</p>
+    <hr> 
+</div>
+
+
+{% endblock%}

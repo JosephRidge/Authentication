@@ -1,0 +1,14 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="container py-5">
+    <h1 class="display-6">Are you sure you want to remove {{mountain.name}}?</h1>
+    <hr>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <a href="{% url 'readMountains' %}" class="text-decoration-none mx-2 text-success">go back?</a>
+        <input type="submit" value="DELETE">
+    </form>
+</div>
+{% endblock %}
