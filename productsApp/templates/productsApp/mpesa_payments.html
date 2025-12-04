@@ -1,0 +1,24 @@
+{% extends 'main.html'%}
+
+{% block content %}
+<h1 class="display-6">Make purchase</h1>
+
+<form action="" method="POST">
+
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="phoneNumber" class="form-label">Phone Number</label>
+      <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" aria-describedby="phoneNumberHelp">
+      <div id="phoneNumberHelp" class="form-text">We will send you an mpesa prompt. Enter your number like 07...</div>
+    </div>
+    <div class="mb-3">
+      <label for="amount" class="form-label">Amount</label>
+      <input type="text" class="form-control" id="amount" name="amount">
+    </div> 
+    <button type="submit" class="btn btn-success">pay</button>
+  </form>
+
+  <div class="container bg-dark text-light">
+    {{reponse}}
+  </div>
+{% endblock %}
